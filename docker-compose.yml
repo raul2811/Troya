@@ -1,0 +1,97 @@
+services:
+  # 1. Base de datos de Usuarios y Metadatos
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    cap_add:
+      - IPC_LOCK
+    networks:
+      - app-network
+
+  # 2. Inicialización de TigerBeetle (se ejecuta una sola vez)
+  tigerbeetle-init:
+    image: ghcr.io/tigerbeetle/tigerbeetle:0.16.62
+    command: [
+      "format",
+      "--cluster=0",
+      "--replica=0",
+      "--replica-count=1",
+      "/data/0_0.tigerbeetle"
+    ]
+    volumes:
+      - tigerbeetle_data:/data
+    security_opt:
+      - "seccomp:unconfined"
+    cap_add:
+      - IPC_LOCK
+    networks:
+      - app-network
+
+  # 3. Servicio principal de TigerBeetle
+  tigerbeetle:
+    image: ghcr.io/tigerbeetle/tigerbeetle:0.16.62
+    command: [
+      "start",
+      "--addresses=0.0.0.0:3000",
+      "/data/0_0.tigerbeetle"
+    ]
+    security_opt:
+      - "seccomp:unconfined"
+    ports:
+      - "3000:3000"
+    volumes:
+      - tigerbeetle_data:/data
+    restart: unless-stopped
+    cap_add:
+      - IPC_LOCK
+    depends_on:
+      tigerbeetle-init:
+        condition: service_completed_successfully
+    networks:
+      - app-network
+
+  # 4. Tu API de Rust
+  api:
+    build: .
+    image: sistema-bancario:latest
+    restart: "no"
+    env_file:
+      - .env
+    ports:
+      - "5000:5000"
+    # 🔥 Permisos agregados para io_uring
+    security_opt:
+      - "seccomp:unconfined"
+    cap_add:
+      - SYS_ADMIN      # Necesario para io_uring
+      - IPC_LOCK       # Para memoria compartida
+    # 💡 Si lo anterior no funciona (común en Docker Desktop), descomenta esto:
+    # privileged: true
+    depends_on:
+      postgres:
+        condition: service_healthy
+      tigerbeetle:
+        condition: service_started
+    networks:
+      - app-network
+
+volumes:
+  postgres_data:
+  tigerbeetle_data:
+
+networks:
+  app-network:
+    driver: bridge

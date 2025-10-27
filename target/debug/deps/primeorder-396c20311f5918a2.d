@@ -1,0 +1,10 @@
+D:\Programas\Troya\target\debug\deps\primeorder-396c20311f5918a2.d: C:\Users\calamarino\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\primeorder-0.13.6\src\lib.rs C:\Users\calamarino\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\primeorder-0.13.6\src\point_arithmetic.rs C:\Users\calamarino\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\primeorder-0.13.6\src\affine.rs C:\Users\calamarino\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\primeorder-0.13.6\src\field.rs C:\Users\calamarino\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\primeorder-0.13.6\src\projective.rs C:\Users\calamarino\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\primeorder-0.13.6\src\../README.md
+
+D:\Programas\Troya\target\debug\deps\libprimeorder-396c20311f5918a2.rmeta: C:\Users\calamarino\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\primeorder-0.13.6\src\lib.rs C:\Users\calamarino\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\primeorder-0.13.6\src\point_arithmetic.rs C:\Users\calamarino\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\primeorder-0.13.6\src\affine.rs C:\Users\calamarino\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\primeorder-0.13.6\src\field.rs C:\Users\calamarino\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\primeorder-0.13.6\src\projective.rs C:\Users\calamarino\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\primeorder-0.13.6\src\../README.md
+
+C:\Users\calamarino\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\primeorder-0.13.6\src\lib.rs:
+C:\Users\calamarino\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\primeorder-0.13.6\src\point_arithmetic.rs:
+C:\Users\calamarino\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\primeorder-0.13.6\src\affine.rs:
+C:\Users\calamarino\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\primeorder-0.13.6\src\field.rs:
+C:\Users\calamarino\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\primeorder-0.13.6\src\projective.rs:
+C:\Users\calamarino\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\primeorder-0.13.6\src\../README.md:

@@ -1,0 +1,6 @@
+D:\Programas\Troya\target\debug\deps\block_buffer-87d68fce31a5a416.d: C:\Users\calamarino\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\block-buffer-0.10.4\src\lib.rs C:\Users\calamarino\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\block-buffer-0.10.4\src\sealed.rs
+
+D:\Programas\Troya\target\debug\deps\libblock_buffer-87d68fce31a5a416.rmeta: C:\Users\calamarino\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\block-buffer-0.10.4\src\lib.rs C:\Users\calamarino\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\block-buffer-0.10.4\src\sealed.rs
+
+C:\Users\calamarino\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\block-buffer-0.10.4\src\lib.rs:
+C:\Users\calamarino\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\block-buffer-0.10.4\src\sealed.rs:
